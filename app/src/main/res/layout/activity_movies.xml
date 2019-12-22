@@ -6,22 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MoviesActivity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/MoviesActivityTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/moviesList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf=""  />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/list_item_movie_data"
+        tools:itemCount="7" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

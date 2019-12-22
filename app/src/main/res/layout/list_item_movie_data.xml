@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/imageSample" />
+        tools:src="@drawable/image_sample" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/movieTitleId"
@@ -22,9 +22,10 @@
         tools:text="@string/sample_movie_title" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/movieOverviewId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/movieTitleId"
         app:layout_constraintStart_toEndOf="@id/movieImageId"
-        tools:text="@string/sample_movie_description"
+        tools:text="@string/sample_movie_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>
