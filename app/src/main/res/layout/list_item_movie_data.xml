@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/image_sample" />
+        tools:src="@drawable/infinity_war_image" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/movieTitleId"
