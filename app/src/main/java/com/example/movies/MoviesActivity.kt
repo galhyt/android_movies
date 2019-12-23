@@ -2,11 +2,13 @@ package com.example.movies
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.list_item_movie_data.*
 
-class MoviesActivity : AppCompatActivity() {
+class MoviesActivity : AppCompatActivity(), IMovieListeners {
     private val movies: List<MovieItem> = listOf(
         MovieItem(img = R.drawable.black_panther, title = "Black Panther", overview = "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without. Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister, members of the Dora Milaje (the Wakandan 'special forces') and an American secret agent, to prevent Wakanda from being dragged into a world war"),
         MovieItem(img = R.drawable.deadpool_2, title = "Deadpool", overview = "Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life"),
@@ -19,16 +21,20 @@ class MoviesActivity : AppCompatActivity() {
         MovieItem(img = R.drawable.the_meg, title = "The Meg", overview = "A deep sea submersible pilot revisits his past fears in the Mariana Trench, and accidentally unleashes the seventy foot ancestor of the Great White Shark believed to be extinct"),
         MovieItem(img = R.drawable.thor_ragnarok, title = "Thor", overview = "Thor is on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela")
     )
+    var movieItem: MovieItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies)
 
         val rvMoviesList =  findViewById<RecyclerView>(R.id.moviesList)
-        rvMoviesList.adapter = MoviesListViewAdapter(movies, this)
+        rvMoviesList.adapter = MoviesListViewAdapter(movies, this, this)
         rvMoviesList.layoutManager = LinearLayoutManager(this)
     }
 
+    override fun onMovieItemClick(movieItem: MovieItem) {
+        Toast.makeText(this, movieItem.title, Toast.LENGTH_SHORT).show()
 
+    }
 
 }

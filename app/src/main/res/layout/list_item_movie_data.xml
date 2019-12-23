@@ -3,29 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/movieItemHeight">
+    android:layout_height="@dimen/movieItemHeight"
+    android:layout_marginBottom="@dimen/movieItemMarginBottom"
+    android:scrollbars="">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/movieImageId"
         android:layout_width="@dimen/movie_image_width"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/infinity_war_image" />
+<!--
+-->
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/movieTitleId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/movieTitleColor"
+        android:textStyle="bold|italic"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/movieImageId"
         tools:text="@string/sample_movie_title" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/movieOverviewId"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/movieTitleId"
-        app:layout_constraintStart_toEndOf="@id/movieImageId"
+        android:ellipsize="end"
+        android:maxLines="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/movieImageId"
+        app:layout_constraintTop_toBottomOf="@+id/movieTitleId"
         tools:text="@string/sample_movie_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,4 +2,5 @@
 <resources>
     <dimen name="movieItemHeight">108dp</dimen>
     <dimen name="movie_image_width">150dp</dimen>
+    <dimen name="movieItemMarginBottom">5dp</dimen>
 </resources>
